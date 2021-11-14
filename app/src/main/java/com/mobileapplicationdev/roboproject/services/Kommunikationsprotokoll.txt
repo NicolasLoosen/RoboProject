@@ -1,0 +1,119 @@
+
+// Kommunikationsprotokoll:
+// Es gibt drei verschiedene Motorregelungen und jeweils drei Motoren, die angesprochen
+// werden können. Es soll immer nur *ein* Motor von *einer* Regelung debugt werden.
+// Die Kommunikation basiert auf Message-Structs, die als Ganzes über den Socket übertragen werden.
+// Jeder Request-Message folgt eine Response-Message.
+
+// Requests und Responses setzen sich aus Header und Daten zusammen:
+
+struct Message {
+    Header header;
+    byte data[]; // hier stehen unterschiedliche Daten je nach Message-Typ (siehe unten)
+};
+
+struct Header {
+    int32 type;       // kann Werte aus MessageType annehmen
+    int32 packetSize; // Größe der gesamten Message in Bytes
+};
+
+enum MessageType {
+    ERROR      = -1, // irgendwas ist kaputt
+    UNDEFINED  =  0, // sollte nie vorkommen
+    SET_TARGET =  1,
+    CONNECT    =  2,
+    GET_PID    =  3,
+    SET_PID    =  4,
+    DATA       =  5,
+};
+
+// ---------------------------------------------------------------
+// SET_TARGET: Setzt den Regler und Motor, der debugt werden soll.
+// Sendet ERROR-Header zurück, falls die IDs ungültig sind.
+// ---------------------------------------------------------------
+
+struct Request_SetTarget {
+    Header header; // header.type == SET_TARGET
+    int32 taskId;  // 0 = Antriebsregelung | 1 = Stellmotor-Positionsregelung | 2 = Stellmotor-RPM-Regelung
+    int32 motorId; // Motornummer (0 bis 2)
+};
+struct Response_SetTarget {
+    Header header;
+};
+
+
+// ------------------------------------------------------------------------
+// GET_PID: Holt die Regelungsparameter (P,I,D) von der gesetzten Regelung.
+// Sendet ERROR-Header zurück, falls noch keine Regelung gesetzt ist.
+// ------------------------------------------------------------------------
+
+struct Request_GetPID {
+    Header header; // header.type == GET_PID
+};
+struct Response_GetPID {
+    Header header;
+    float32 p_val;
+    float32 i_val;
+    float32 d_val;
+};
+
+
+// ------------------------------------------------------------------------
+// SET_PID: Setzt die Regelungsparameter (P,I,D) von der gesetzten Regelung.
+// Sendet ERROR-Header zurück, falls noch keine Regelung gesetzt ist.
+// ------------------------------------------------------------------------
+
+struct Request_SetPID {
+    Header header; // header.type == SET_PID
+    float32 p_val;
+    float32 i_val;
+    float32 d_val;
+};
+struct Response_SetPID {
+    Header header;
+};
+
+
+// ---------------------------------------------------------------------------------------
+// CONNECT: Der Mikrokontroller soll sich auf einem gegebenen Port zu eurer App verbinden,
+// um dort die Daten von der Regelung hinzuschicken.
+// Sendet ERROR-Header zurück, falls das Verbinden fehlschlägt.
+// ---------------------------------------------------------------------------------------
+
+struct Request_Connect {
+    Header header; // header.type == CONNECT
+    int32 port;
+};
+struct Response_Connect {
+    Header header;
+};
+
+// Falls die Verbindung erfolgreich hergestellt wurde, kommen nun regelmäßig neue Daten auf dem 
+// gegebenen Port an. Die Daten werden in einem 256 Byte großen Buffer gesammelt und weggeschickt,
+// sobald dieser voll ist. D.h. es kommen immer ein Header und dann bis zu 256 Bytes an.
+// Je nach Regelung kommen *unterschiedliche* Datentypen an! Die Anzahl der Daten ergibt sich 
+// dementsprechend aus ((header.packetSize - sizeof(header)) / sizeof(Debug_Data_*)).
+
+// Datentypen:
+
+struct Debug_Data_MR {   // Antriebsregelung
+    float32 current_inc; // aktuelle Geschwindigkeit (Einheit "Inkremente")
+};
+
+struct Debug_Data_RSP {  // Stellmotor-Positionsregelung
+    int32 position_raw;  // aktuelle Position des Stellmotors (Einheit "Inkremente")
+};
+
+struct Debug_Data_RSR {  // Stellmotor-RPM-Regelung
+    float32 current_inc; // aktuelle Geschwindigkeit (Einheit "Inkremente")
+};
+
+// Ankommende Message:
+struct Message_Data {
+    Header header; // header.type == DATA
+    union { // Array bis zu 256 byte groß
+        Debug_Data_MR  mr_data[];
+        Debug_Data_RSP rsp_data[];
+        Debug_Data_RSR rsr_data[];
+    };
+};

@@ -1,0 +1,136 @@
+<resources>
+    <string name="app_name">Robot Project</string>
+    <!-- TAB Strings -->
+    <string name="tab_name_tab1">Steuerung</string>
+    <string name="tab_name_tab2">Antriebsmotoren Debug</string>
+    <string name="tab_name_tab3">Steuermotoren Debug</string>
+    <!-- -->
+
+    <!-- general strings -->
+    <string name="text_enter_ip">Enter Robot IP</string>
+
+    <string name="text_toggleButton_connection_on">Disconnect</string>
+    <string name="text_toggleButton_connection_off">Connect</string>
+
+    <string name="error_msg_invalid_ip">Geben Sie eine gueltige IP ein!</string>
+    <string name="graph_cubic">Kubischer Graph</string>
+    <string name="graph_linear">Linearer Graph</string>
+    <!---->
+
+    <!-- Utils string -->
+    <string name="setpoint">Soll-Wert</string>
+    <string name="actual_value">Ist-Wert</string>
+
+    <!-- robot Profile -->
+
+    <string name="name_not_empty">Name darf nicht leer sein!</string>
+    <string name="ip_not_valid">Angegebene IP entspricht nicht den IP-Richtlinien!</string>
+    <string name="port_not_valid">ist kleiner als 0 oder größer als 65535!</string>
+    <string name="wrong_speed">Geschwindigkeit darf nicht 0 oder negativ sein!</string>
+    <string name="wrong_frequency">Frequenz darf nicht 0 oder negativ sein!</string>
+
+    <!-- General Profile Strings -->
+    <string name="delete_profile">Löschen</string>
+    <string name="edit_profile">Bearbeiten</string>
+    <string name="new_profile">Neues Profil anlegen</string>
+
+    <!-- Settings Strings -->
+
+    <string name="settings_port_1_key">PORT_1</string>
+    <string name="settings_port_2_key">PORT_2</string>
+    <string name="settings_port_3_key">PORT_3</string>
+    <string name="settings_angular_velocity_key">ANGULAR_VELOCITY</string>
+    <string name="settings_maximum_x_key">MAXIMUM_X</string>
+    <string name="settings_maximum_y_key">MAXIMUM_Y</string>
+
+    <string name="port_1_default_value">1000</string>
+    <string name="port_2_default_value">1000</string>
+    <string name="port_3_default_value">1000</string>
+    <string name="angular_velocity_default_value">0.5</string>
+    <string name="maximum_x_default_value">0.6</string>
+    <string name="maximum_y_default_value">0.5</string>
+
+    <string-array name="settings_port_key">
+        <item>@string/settings_port_1_key</item>
+        <item>@string/settings_port_2_key</item>
+        <item>@string/settings_port_3_key</item>
+        <item>@string/settings_angular_velocity_key</item>
+        <item>@string/settings_maximum_x_key</item>
+        <item>@string/settings_maximum_y_key</item>
+    </string-array>
+
+    <string-array name="default_port_value">
+        <item>@string/port_1_default_value</item>
+        <item>@string/port_2_default_value</item>
+        <item>@string/port_3_default_value</item>
+        <item>@string/angular_velocity_default_value</item>
+        <item>@string/maximum_x_default_value</item>
+        <item>@string/maximum_y_default_value</item>
+    </string-array>
+
+    <!-- hints -->
+    <string name="robot_name_hint">Name</string>
+    <string name="robot_ip_hint">Roboter IP</string>
+    <string name="robot_control_port_hint">Roboter Steuer-Port</string>
+    <string name="robot_drive_motor_port_hint">Antriebsmotoren Port</string>
+    <string name="robot_servomotor_port_hint">Stellmotoren Port</string>
+    <string name="robot_angular_velocity_hint">Max. Winkelgeschw.</string>
+    <string name="robot_linear_x_velocity_hint">Max. X Lineargeschw.</string>
+    <string name="robot_linear_y_velocity_hint">Max. Y Lineargeschw.</string>
+    <string name="robot_frequency_hint">Regler Frequenz kHz</string>
+    <string name="robot_debugIp_hint">Debug IP</string>
+
+    <!--  -->
+    <string name="robot_save">Speichern</string>
+    <string name="robot_cancel">Abbrechen</string>
+    <!-- -->
+
+    <!-- TAB 0 Strings -->
+    <string name="emroLabLogo">emroLabLogo</string>
+    <string name="htwLogo">htwLogo</string>
+    <string name="robotLogo">robotLogo</string>
+    <!-- -->
+
+    <!-- TAB 1 Strings -->
+    <string name="textView_default_value">0.00</string>
+    <string name="textView_x">X</string>
+    <string name="textView_y">Y</string>
+    <string name="textView_linear_velocity">Lineargeschwindigkeit</string>
+    <string name="textView_angular_velocity">Winkelgeschwindigkeit</string>
+    <!-- -->
+
+    <!-- TAB 2 Strings -->
+    <string name="graph_toggle_button_start">Start Debugging</string>
+    <string name="graph_toggle_button_stop">Stop Debugging</string>
+
+    <string name="enter_speed">Geschwindigkeit</string>
+
+    <string name="enter_P_Factor">P</string>
+    <string name="enter_I_Factor">I</string>
+    <string name="Enter_frequency">Regler Frequenz kHz</string>
+
+    <string-array name="engines">
+        <item>Motor vorne links</item>
+        <item>Motor vorne rechts</item>
+        <item>Motor hinten</item>
+    </string-array>
+    <string name="error_msg_invalid_debug_input">Falsche Eingabe der Debug Control Data</string>
+    <string name="toggleButton_reset_debug">Reset Chart</string>
+    <!-- -->
+
+    <!-- TAB 3 Strings -->
+    <string name="enter_angle">Winkel °</string>
+    <!-- -->
+
+    <!-- Socket Strings -->
+    <string name="error_msg_socket_io_exception">Error while sending/receiving data!</string>
+    <string name="error_msg_sending_target">Error while sending target</string>
+    <string name="error_msg_requesting_pid">Error while requesting pid values</string>
+    <string name="error_msg_receiving_pid">Error while sending pid values</string>
+    <string name="error_msg_sending_velocity">Error while sending velocity</string>
+    <string name="error_msg_connecting">Error while connecting</string>
+    <string name="error_msg_sending_angle">Error while sending angle</string>
+    <string name="error_msg_receiving_data">Error while receiving data</string>
+    <!-- -->
+
+</resources>

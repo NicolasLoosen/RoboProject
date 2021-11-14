@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size">24sp</dimen>
+
+    <dimen name="editText_ip_text_size">@dimen/text_size</dimen>
+
+    <dimen name="toggleButton_connection_text_size">18sp</dimen>
+    <dimen name="toggleButton_debug_size">18sp</dimen>
+
+    <dimen name="stick_size">100dp</dimen>
+    <dimen name="base_size">300dp</dimen>
+
+    <dimen name="htw_logo_width">400dp</dimen>
+    <dimen name="htw_logo_height">100dp</dimen>
+
+    <dimen name="emrolab_logo_width">400dp</dimen>
+    <dimen name="emrolab_logo_height">100dp</dimen>
+
+    <dimen name="robot_logo_width">300dp</dimen>
+    <dimen name="robot_logo_height">300dp</dimen>
+
+    <dimen name="profile_list_view_width">600dp</dimen>
+    <dimen name="profile_list_view_height">400dp</dimen>
+
+    <dimen name="graph_size">350dp</dimen>
+
+    <dimen name="spinner_list_engine_height">60dp</dimen>
+</resources>

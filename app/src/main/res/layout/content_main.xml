@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.mobileapplicationdev.roboproject.activities.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/tab0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="@dimen/robot_logo_width"
+                            android:layout_height="@dimen/robot_logo_height"
+                            android:layout_marginEnd="8dp"
+                            android:adjustViewBounds="false"
+                            android:contentDescription="@string/robotLogo"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.3"
+                            app:srcCompat="@drawable/cad_plattform" />
+
+                        <ImageView
+                            android:layout_width="@dimen/emrolab_logo_width"
+                            android:layout_height="@dimen/emrolab_logo_height"
+                            android:contentDescription="@string/emroLabLogo"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.95"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.95"
+                            app:srcCompat="@drawable/emrolab" />
+
+                        <ImageView
+                            android:layout_width="@dimen/htw_logo_width"
+                            android:layout_height="@dimen/htw_logo_height"
+                            android:contentDescription="@string/htwLogo"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.05"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.95"
+                            app:srcCompat="@drawable/htwsaar_logo" />
+
+                        <ListView
+                            android:id="@+id/profileListView"
+                            android:layout_width="@dimen/profile_list_view_width"
+                            android:layout_height="@dimen/profile_list_view_height"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.9"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.19999999" />
+
+                    </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:id="@+id/editText_ipAddress_tab3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/text_enter_ip"
+                            android:singleLine="true"
+                            android:textSize="@dimen/editText_ip_text_size"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.05"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.05" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton_connection_tab3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="60dp"
+                            android:singleLine="false"
+                            android:textOff="@string/text_toggleButton_connection_off"
+                            android:textOn="@string/text_toggleButton_connection_on"
+                            android:textSize="@dimen/toggleButton_connection_text_size"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/editText_ipAddress_tab3"
+                            app:layout_constraintStart_toEndOf="@+id/editText_ipAddress_tab3" />
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/graph_tab3"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/graph_size"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.74" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton_debug_tab3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textOff="@string/graph_toggle_button_start"
+                            android:textOn="@string/graph_toggle_button_stop"
+                            android:textSize="@dimen/toggleButton_debug_size"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.3"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/graph_tab3" />
+
+                        <Button
+                            android:id="@+id/button_reset_tab3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/toggleButton_reset_debug"
+                            android:textSize="@dimen/toggleButton_debug_size"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.7"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/graph_tab3" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton_graph_tab3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textOff="@string/graph_cubic"
+                            android:textOn="@string/graph_linear"
+                            app:layout_constraintStart_toStartOf="@+id/spinner_engines_tab3"
+                            app:layout_constraintTop_toBottomOf="@+id/spinner_engines_tab3" />
+
+                        <Spinner
+                            android:id="@+id/spinner_engines_tab3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/spinner_list_engine_height"
+                            android:layout_marginTop="16dp"
+                            android:textSize="@dimen/text_size"
+                            app:layout_constraintStart_toStartOf="@+id/editText_ipAddress_tab3"
+                            app:layout_constraintTop_toBottomOf="@+id/editText_ipAddress_tab3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_p_tab3"
+                            android:text="@string/enter_P_Factor"
+                            app:layout_constraintBottom_toTopOf="@+id/editText_p_tab3"
+                            app:layout_constraintStart_toStartOf="@+id/editText_p_tab3" />
+
+                        <EditText
+                            android:id="@+id/editText_p_tab3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.95"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.100000024" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_angle_tab3"
+                            android:text="@string/enter_angle"
+                            app:layout_constraintBottom_toTopOf="@+id/editText_angle_tab3"
+                            app:layout_constraintStart_toStartOf="@+id/editText_angle_tab3" />
+
+                        <EditText
+                            android:id="@+id/editText_angle_tab3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:ems="10"
+                            android:inputType="number"
+                            app:layout_constraintBottom_toBottomOf="@+id/editText_p_tab3"
+                            app:layout_constraintEnd_toStartOf="@+id/editText_p_tab3"
+                            app:layout_constraintTop_toTopOf="@+id/editText_p_tab3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_frequency_tab3"
+                            android:text="@string/Enter_frequency"
+                            app:layout_constraintBottom_toTopOf="@+id/editText_frequency_tab3"
+                            app:layout_constraintStart_toStartOf="@+id/editText_frequency_tab3" />
+
+                        <EditText
+                            android:id="@+id/editText_frequency_tab3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="36dp"
+                            android:ems="10"
+                            android:inputType="number"
+                            app:layout_constraintEnd_toEndOf="@+id/editText_angle_tab3"
+                            app:layout_constraintStart_toStartOf="@+id/editText_angle_tab3"
+                            app:layout_constraintTop_toBottomOf="@+id/editText_angle_tab3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_i_tab3"
+                            android:text="@string/enter_I_Factor"
+                            app:layout_constraintBottom_toTopOf="@+id/editText_i_tab3"
+                            app:layout_constraintStart_toStartOf="@+id/editText_i_tab3" />
+
+                        <EditText
+                            android:id="@+id/editText_i_tab3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="36dp"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            app:layout_constraintEnd_toEndOf="@+id/editText_p_tab3"
+                            app:layout_constraintStart_toStartOf="@+id/editText_p_tab3"
+                            app:layout_constraintTop_toBottomOf="@+id/editText_p_tab3" />
+
+                    </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:id="@+id/editText_ipAddress_tab2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/text_enter_ip"
+                            android:singleLine="true"
+                            android:textSize="@dimen/editText_ip_text_size"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.05"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.050000012" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton_connection_tab2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="60dp"
+                            android:textOff="@string/text_toggleButton_connection_off"
+                            android:textOn="@string/text_toggleButton_connection_on"
+                            android:textSize="@dimen/toggleButton_connection_text_size"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/editText_ipAddress_tab2"
+                            app:layout_constraintStart_toEndOf="@+id/editText_ipAddress_tab2" />
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/graph_tab2"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/graph_size"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.74" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton_debug_tab2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textOff="@string/graph_toggle_button_start"
+                            android:textOn="@string/graph_toggle_button_stop"
+                            android:textSize="@dimen/toggleButton_debug_size"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.3"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/graph_tab2" />
+
+                        <Spinner
+                            android:id="@+id/spinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/spinner_list_engine_height"
+                            android:layout_marginTop="16dp"
+                            android:textSize="@dimen/text_size"
+                            app:layout_constraintStart_toStartOf="@+id/editText_ipAddress_tab2"
+                            app:layout_constraintTop_toBottomOf="@+id/editText_ipAddress_tab2" />
+
+                        <EditText
+                            android:id="@+id/editText_enterDebug_speed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            app:layout_constraintBottom_toBottomOf="@+id/editTextEnterP"
+                            app:layout_constraintEnd_toStartOf="@+id/editTextEnterP"
+                            app:layout_constraintTop_toTopOf="@+id/editTextEnterP" />
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="18dp"
+                            android:labelFor="@+id/editTextEnterI"
+                            android:text="@string/enter_I_Factor"
+                            app:layout_constraintBottom_toTopOf="@+id/editTextEnterI"
+                            app:layout_constraintStart_toStartOf="@+id/editTextEnterI" />
+
+                        <EditText
+                            android:id="@+id/editTextEnterI"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="36dp"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            app:layout_constraintEnd_toEndOf="@+id/editTextEnterP"
+                            app:layout_constraintStart_toStartOf="@+id/editTextEnterP"
+                            app:layout_constraintTop_toBottomOf="@+id/editTextEnterP" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editTextEnterP"
+                            android:text="@string/enter_P_Factor"
+                            app:layout_constraintBottom_toTopOf="@+id/editTextEnterP"
+                            app:layout_constraintStart_toStartOf="@+id/editTextEnterP" />
+
+                        <EditText
+                            android:id="@+id/editTextEnterP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.95"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.100000024" />
+
+                        <TextView
+                            android:id="@+id/textView_frequency"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editTextFrequency"
+                            android:text="@string/Enter_frequency"
+                            app:layout_constraintBottom_toTopOf="@+id/editTextFrequency"
+                            app:layout_constraintStart_toStartOf="@+id/editTextFrequency" />
+
+                        <EditText
+                            android:id="@+id/editTextFrequency"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="36dp"
+                            android:ems="10"
+                            android:inputType="number"
+                            app:layout_constraintEnd_toEndOf="@+id/editText_enterDebug_speed"
+                            app:layout_constraintStart_toStartOf="@+id/editText_enterDebug_speed"
+                            app:layout_constraintTop_toBottomOf="@+id/editText_enterDebug_speed" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_enterDebug_speed"
+                            android:text="@string/enter_speed"
+                            app:layout_constraintBottom_toTopOf="@+id/editText_enterDebug_speed"
+                            app:layout_constraintStart_toStartOf="@+id/editText_enterDebug_speed" />
+
+                        <Button
+                            android:id="@+id/button_reset_tab2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/toggleButton_reset_debug"
+                            android:textSize="@dimen/toggleButton_debug_size"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.7"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/graph_tab2" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton_graph_tab2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textOff="@string/graph_cubic"
+                            android:textOn="@string/graph_linear"
+                            app:layout_constraintStart_toStartOf="@+id/spinner"
+                            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+                    </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:id="@+id/editText_ipAddress_tab1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/text_enter_ip"
+                            android:singleLine="true"
+                            android:textSize="@dimen/editText_ip_text_size"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.05"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.050000012" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton_connection_tab1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="60dp"
+                            android:textOff="@string/text_toggleButton_connection_off"
+                            android:textOn="@string/text_toggleButton_connection_on"
+                            android:textSize="@dimen/toggleButton_connection_text_size"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/editText_ipAddress_tab1"
+                            app:layout_constraintStart_toEndOf="@+id/editText_ipAddress_tab1" />
+
+                        <com.jmedeisis.bugstick.Joystick
+                            android:id="@+id/leftJoystick"
+                            android:layout_width="@dimen/base_size"
+                            android:layout_height="@dimen/base_size"
+                            android:background="@drawable/bg_base"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.05"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.6"
+                            app:start_on_first_touch="true">
+
+                            <Button
+                                android:layout_width="@dimen/stick_size"
+                                android:layout_height="@dimen/stick_size"
+                                android:background="@drawable/bg_stick" />
+                        </com.jmedeisis.bugstick.Joystick>
+
+                        <com.jmedeisis.bugstick.Joystick
+                            android:id="@+id/rightJoystick"
+                            android:layout_width="@dimen/base_size"
+                            android:layout_height="0dp"
+                            android:background="@drawable/bg_base"
+                            app:layout_constraintBottom_toBottomOf="@+id/leftJoystick"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.95"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/leftJoystick"
+                            app:motion_constraint="Horizontal"
+                            app:start_on_first_touch="true">
+
+                            <Button
+                                android:layout_width="@dimen/stick_size"
+                                android:layout_height="@dimen/stick_size"
+                                android:background="@drawable/bg_stick" />
+                        </com.jmedeisis.bugstick.Joystick>
+
+                        <TextView
+                            android:id="@+id/textView_leftJoyStick_X_Value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="24dp"
+                            android:text="@string/textView_default_value"
+                            android:textSize="@dimen/text_size"
+                            app:layout_constraintStart_toStartOf="@+id/leftJoystick"
+                            app:layout_constraintTop_toBottomOf="@+id/leftJoystick" />
+
+                        <TextView
+                            android:id="@+id/textView_leftJoyStick_Y_Value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/textView_default_value"
+                            android:textSize="@dimen/text_size"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView_leftJoyStick_X_Value"
+                            app:layout_constraintEnd_toEndOf="@+id/leftJoystick"
+                            app:layout_constraintTop_toTopOf="@+id/textView_leftJoyStick_X_Value" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/textView_x"
+                            android:textSize="@dimen/text_size"
+                            app:layout_constraintStart_toStartOf="@+id/leftJoystick"
+                            app:layout_constraintTop_toBottomOf="@+id/textView_leftJoyStick_X_Value" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/textView_y"
+                            android:textSize="@dimen/text_size"
+                            app:layout_constraintEnd_toEndOf="@+id/leftJoystick"
+                            app:layout_constraintTop_toBottomOf="@+id/textView_leftJoyStick_Y_Value" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/textView_linear_velocity"
+                            android:textSize="@dimen/text_size"
+                            app:layout_constraintBottom_toTopOf="@+id/leftJoystick"
+                            app:layout_constraintEnd_toEndOf="@+id/leftJoystick"
+                            app:layout_constraintStart_toStartOf="@+id/leftJoystick" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/textView_angular_velocity"
+                            android:textSize="@dimen/text_size"
+                            app:layout_constraintBottom_toTopOf="@+id/rightJoystick"
+                            app:layout_constraintEnd_toEndOf="@+id/rightJoystick"
+                            app:layout_constraintStart_toStartOf="@+id/rightJoystick" />
+
+                        <TextView
+                            android:id="@+id/textView_rightJoyStickValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:text="@string/textView_default_value"
+                            android:textSize="@dimen/text_size"
+                            app:layout_constraintEnd_toEndOf="@+id/rightJoystick"
+                            app:layout_constraintStart_toStartOf="@+id/rightJoystick"
+                            app:layout_constraintTop_toBottomOf="@+id/rightJoystick" />
+                    </android.support.constraint.ConstraintLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/editRobotName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <EditText
+        android:id="@+id/editRobotIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="@+id/textView_ip"
+        app:layout_constraintTop_toBottomOf="@+id/textView_ip" />
+
+    <EditText
+        android:id="@+id/editRobotControlPort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="@+id/textView_controlPort"
+        app:layout_constraintTop_toBottomOf="@+id/textView_controlPort" />
+
+    <EditText
+        android:id="@+id/editRobotDriveMotorPort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="@+id/textView_driveMotorPort"
+        app:layout_constraintTop_toBottomOf="@+id/textView_driveMotorPort" />
+
+    <EditText
+        android:id="@+id/editRobotServoMotorPort"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="@+id/textView_servoMotorPort"
+        app:layout_constraintTop_toBottomOf="@+id/textView_servoMotorPort" />
+
+    <EditText
+        android:id="@+id/editRobotMaxX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <EditText
+        android:id="@+id/editRobotMaxY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="@+id/textView_maxY"
+        app:layout_constraintTop_toBottomOf="@+id/textView_maxY" />
+
+    <EditText
+        android:id="@+id/editRobotAngularVelocity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="@+id/textView_angularVelocity"
+        app:layout_constraintTop_toBottomOf="@+id/textView_angularVelocity" />
+
+    <EditText
+        android:id="@+id/editRobotFrequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="@+id/textView_frequency"
+        app:layout_constraintTop_toBottomOf="@+id/textView_frequency" />
+
+    <EditText
+        android:id="@+id/editRobotDebugIp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="@+id/textView_debugIp"
+        app:layout_constraintTop_toBottomOf="@+id/textView_debugIp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/robot_save"
+        app:layout_constraintBottom_toBottomOf="@+id/cancelButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cancelButton" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/robot_cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/editRobotName"
+        android:text="@string/robot_name_hint"
+        app:layout_constraintBottom_toTopOf="@+id/editRobotName"
+        app:layout_constraintStart_toStartOf="@+id/editRobotName" />
+
+    <TextView
+        android:id="@+id/textView_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:labelFor="@+id/editRobotIP"
+        android:text="@string/robot_ip_hint"
+        app:layout_constraintStart_toStartOf="@+id/editRobotName"
+        app:layout_constraintTop_toBottomOf="@+id/editRobotName" />
+
+    <TextView
+        android:id="@+id/textView_controlPort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:labelFor="@+id/editRobotControlPort"
+        android:text="@string/robot_control_port_hint"
+        app:layout_constraintStart_toStartOf="@+id/editRobotDebugIp"
+        app:layout_constraintTop_toBottomOf="@+id/editRobotDebugIp" />
+
+    <TextView
+        android:id="@+id/textView_driveMotorPort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:labelFor="@+id/editRobotDriveMotorPort"
+        android:text="@string/robot_drive_motor_port_hint"
+        app:layout_constraintStart_toStartOf="@+id/editRobotControlPort"
+        app:layout_constraintTop_toBottomOf="@+id/editRobotControlPort" />
+
+    <TextView
+        android:id="@+id/textView_servoMotorPort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:labelFor="@+id/editRobotServoMotorPort"
+        android:text="@string/robot_servomotor_port_hint"
+        app:layout_constraintStart_toStartOf="@+id/editRobotFrequency"
+        app:layout_constraintTop_toBottomOf="@+id/editRobotFrequency" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/editRobotMaxX"
+        android:text="@string/robot_linear_x_velocity_hint"
+        app:layout_constraintBottom_toTopOf="@+id/editRobotMaxX"
+        app:layout_constraintStart_toStartOf="@+id/editRobotMaxX" />
+
+    <TextView
+        android:id="@+id/textView_maxY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:labelFor="@+id/editRobotMaxY"
+        android:text="@string/robot_linear_y_velocity_hint"
+        app:layout_constraintStart_toStartOf="@+id/editRobotMaxX"
+        app:layout_constraintTop_toBottomOf="@+id/editRobotMaxX" />
+
+    <TextView
+        android:id="@+id/textView_angularVelocity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:labelFor="@+id/editRobotAngularVelocity"
+        android:text="@string/robot_angular_velocity_hint"
+        app:layout_constraintStart_toStartOf="@+id/editRobotMaxY"
+        app:layout_constraintTop_toBottomOf="@+id/editRobotMaxY" />
+
+    <TextView
+        android:id="@+id/textView_frequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:labelFor="@+id/editRobotFrequency"
+        android:text="@string/robot_frequency_hint"
+        app:layout_constraintStart_toStartOf="@+id/editRobotAngularVelocity"
+        app:layout_constraintTop_toBottomOf="@+id/editRobotAngularVelocity" />
+
+    <TextView
+        android:id="@+id/textView_debugIp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/robot_debugIp_hint"
+        app:layout_constraintStart_toStartOf="@+id/editRobotIP"
+        app:layout_constraintTop_toBottomOf="@+id/editRobotIP" />
+</android.support.constraint.ConstraintLayout>
